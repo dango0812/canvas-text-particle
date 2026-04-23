@@ -1,0 +1,34 @@
+{
+  "name": "canvas-text-particle",
+  "version": "1.0.1",
+  "description": "Canvas-based interactive particle system that reacts to mouse movement",
+  "main": "index.js",
+  "type": "module",
+  "exports": {
+    ".": "./index.js"
+  },
+  "files": [
+    "index.js",
+    "src/",
+    "dist/"
+  ],
+  "scripts": {},
+  "keywords": [
+    "particle",
+    "canvas",
+    "animation",
+    "interactive",
+    "mouse",
+    "react",
+    "nextjs",
+    "text"
+  ],
+  "author": "dango0812",
+  "license": "ISC",
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "packageManager": "pnpm@10.28.2"
+}
