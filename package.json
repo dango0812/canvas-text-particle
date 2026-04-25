@@ -5,19 +5,29 @@
   "main": "index.js",
   "type": "module",
   "exports": {
-    ".": "./index.js"
+    ".": "./index.js",
+    "./react": "./dist/react.js"
   },
   "files": [
     "index.js",
     "src/",
     "dist/"
   ],
-  "scripts": {},
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "tsc -p tsconfig.build.json --watch",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix"
+  },
   "keywords": [
     "particle",
     "canvas",
     "animation",
     "interactive",
+    "component",
+    "javascript",
+    "typescript",
+    "module",
     "mouse",
     "react",
     "nextjs",
@@ -25,10 +35,25 @@
   ],
   "author": "dango0812",
   "license": "ISC",
+  "peerDependencies": {
+    "react": ">=18.0.0"
+  },
   "peerDependenciesMeta": {
     "react": {
       "optional": true
     }
   },
-  "packageManager": "pnpm@10.28.2"
+  "packageManager": "pnpm@10.28.2",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/react": "^19.2.14",
+    "eslint": "^10.2.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-no-for-of-array": "^0.1.0",
+    "eslint-plugin-prettier": "^5.5.5",
+    "globals": "^17.5.0",
+    "prettier": "^3.8.3",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.59.0"
+  }
 }
