@@ -1,6 +1,6 @@
 {
   "name": "canvas-text-particle",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Canvas-based interactive particle system that reacts to mouse movement",
   "main": "src/index.ts",
   "type": "module",
@@ -40,6 +40,14 @@
   ],
   "author": "dango0812",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dango0812/canvas-text-particle.git"
+  },
+  "homepage": "https://github.com/dango0812/canvas-text-particle#readme",
+  "bugs": {
+    "url": "https://github.com/dango0812/canvas-text-particle/issues"
+  },
   "packageManager": "pnpm@10.28.2",
   "devDependencies": {
     "@eslint/js": "^10.0.1",
