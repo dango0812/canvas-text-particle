@@ -1,6 +1,6 @@
 {
   "name": "canvas-text-particle",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Canvas-based interactive particle system that reacts to mouse movement",
   "main": "src/index.ts",
   "type": "module",
