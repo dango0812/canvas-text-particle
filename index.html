@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -43,9 +43,12 @@
   <body>
     <canvas id="canvas-text-particle" width="900" height="400"></canvas>
 
+    <p id="info" style="font-size:13px;color:#64748b;"></p>
+
     <div class="controls">
       <button id="btn-color">Change Color</button>
-      <button id="btn-spread">Spread Up</button>
+      <button id="btn-spread-up">Spread Up</button>
+      <button id="btn-spread-down">Spread Down</button>
       <button id="btn-reset">Reset</button>
     </div>
 
@@ -53,27 +56,48 @@
       import { ParticleText } from "./dist/index.mjs";
 
       const canvas = document.getElementById("canvas-text-particle");
+      const info = document.getElementById("info");
+
+      const INITIAL = { color: "#38bdf8", fontSize: 100, spread: 0.6 };
+      let color = INITIAL.color;
+      let spread = INITIAL.spread;
+
+      function renderInfo() {
+        info.textContent = `color: ${color} / spread: ${spread.toFixed(1)}`;
+      }
 
       const pt = new ParticleText(canvas, {
-        text: ["Donggyu", "Frontend Engineer"],
-        color: "#38bdf8",
-        fontSize: 100,
-        spread: 0.9,
+        text: ["Canvas", "Text Particle"],
+        ...INITIAL,
       }).mount();
 
       document.getElementById("btn-color").addEventListener("click", () => {
         const colors = ["#f472b6", "#a78bfa", "#34d399", "#fb923c", "#38bdf8"];
-        const next = colors[Math.floor(Math.random() * colors.length)];
-        pt.update({ color: next });
+        color = colors[Math.floor(Math.random() * colors.length)];
+        pt.update({ color });
+        renderInfo();
       });
 
-      document.getElementById("btn-spread").addEventListener("click", () => {
-        pt.update({ spread: 3 });
+      document.getElementById("btn-spread-up").addEventListener("click", () => {
+        spread = Math.min(spread + 0.1, 10);
+        pt.update({ spread });
+        renderInfo();
+      });
+
+      document.getElementById("btn-spread-down").addEventListener("click", () => {
+        spread = Math.max(spread - 0.1, 0.1);
+        pt.update({ spread });
+        renderInfo();
       });
 
       document.getElementById("btn-reset").addEventListener("click", () => {
-        pt.update({ color: "#38bdf8", spread: 0.9 });
+        color = INITIAL.color;
+        spread = INITIAL.spread;
+        pt.update({ color, spread });
+        renderInfo();
       });
+
+      renderInfo();
     </script>
   </body>
 </html>
