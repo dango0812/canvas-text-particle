@@ -4,8 +4,12 @@ Canvas-based interactive particle system that renders text as particles and reac
 
 [![npm version](https://img.shields.io/npm/v/canvas-text-particle)](https://www.npmjs.com/package/canvas-text-particle)
 [![npm downloads](https://img.shields.io/npm/dm/canvas-text-particle)](https://www.npmjs.com/package/canvas-text-particle)
-[![jsDelivr hits](https://img.shields.io/jsdelivr/npm/hm/canvas-text-particle)](https://www.jsdelivr.com/package/npm/canvas-text-particle)
+[![jsDelivr hits](https://img.shields.io/jsdelivr/npm/hy/canvas-text-particle)](https://www.jsdelivr.com/package/npm/canvas-text-particle)
 [![license](https://img.shields.io/npm/l/canvas-text-particle)](https://www.npmjs.com/package/canvas-text-particle)
+
+## Demo
+
+[Demo Website](https://canvas-text-particle.dong-gyu.com)
 
 ## Install
 
@@ -17,7 +21,7 @@ npm install canvas-text-particle
 # pnpm
 pnpm add canvas-text-particle
 # yarn
-yarn
+yarn add canvas-text-particle
 ```
 
 ### CDN
