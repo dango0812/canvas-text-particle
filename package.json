@@ -42,9 +42,9 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dango0812/canvas-text-particle.git"
+    "url": "https://github.com/dango0812/canvas-text-particle"
   },
-  "homepage": "https://github.com/dango0812/canvas-text-particle#readme",
+  "homepage": "https://canvas-text-particle.dong-gyu.com",
   "bugs": {
     "url": "https://github.com/dango0812/canvas-text-particle/issues"
   },
