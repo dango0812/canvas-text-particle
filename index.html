@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas Text Particle</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100dvh;
+        gap: 24px;
+      }
+      canvas {
+        display: block;
+      }
+      .controls {
+        display: flex;
+        gap: 12px;
+      }
+      button {
+        padding: 8px 16px;
+        border: 1px solid #38bdf8;
+        background: transparent;
+        color: #38bdf8;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+      button:hover {
+        background: #38bdf8;
+        color: #0f172a;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas-text-particle" width="900" height="400"></canvas>
+
+    <div class="controls">
+      <button id="btn-color">Change Color</button>
+      <button id="btn-spread">Spread Up</button>
+      <button id="btn-reset">Reset</button>
+    </div>
+
+    <script type="module">
+      import { ParticleText } from "./dist/text-particle.js";
+
+      const canvas = document.getElementById("canvas-text-particle");
+
+      const pt = new ParticleText(canvas, {
+        text: ["Donggyu", "Frontend Engineer"],
+        color: "#38bdf8",
+        fontSize: 100,
+        spread: 0.9,
+      }).mount();
+
+      document.getElementById("btn-color").addEventListener("click", () => {
+        const colors = ["#f472b6", "#a78bfa", "#34d399", "#fb923c", "#38bdf8"];
+        const next = colors[Math.floor(Math.random() * colors.length)];
+        pt.update({ color: next });
+      });
+
+      document.getElementById("btn-spread").addEventListener("click", () => {
+        pt.update({ spread: 3 });
+      });
+
+      document.getElementById("btn-reset").addEventListener("click", () => {
+        pt.update({ color: "#38bdf8", spread: 0.9 });
+      });
+    </script>
+  </body>
+</html>
